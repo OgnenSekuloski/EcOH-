@@ -494,13 +494,6 @@ map = new google.maps.Map(mapDiv, mapOptions);
 //=================================
 }
 //================================================
-function displayLocation(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-
-  showMap(position.coords);
-}
-
 window.onload = function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation, displayError);
