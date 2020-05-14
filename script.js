@@ -413,6 +413,14 @@ var geoJson = {
   ]
 };
 
+
+function displayLocation(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+  showMap(position.coords);
+}
+
 function showMap(coords) {
 	var googleLatLong = new google.maps.LatLng(coords.latitude, coords.longitude);
 	var mapOptions = {
@@ -464,7 +472,7 @@ map = new google.maps.Map(mapDiv, mapOptions);
 	infowindow.open(map);
 });
   //Marker clustering
-  map.data.loadGeoJson(geoJson, null, function(features) {
+  map.data.loadGeoJson('markers.json', null, function(features) {
 
     // group items / cluster
     var markers = features.map(function(feature) {
