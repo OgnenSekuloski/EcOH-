@@ -472,7 +472,7 @@ map = new google.maps.Map(mapDiv, mapOptions);
 	infowindow.open(map);
 });
   //Marker clustering
-  map.data.loadGeoJson('markers.json', null, function(features) {
+  map.data.loadGeoJson(geoJson, null, function(features) {
 
     // group items / cluster
     var markers = features.map(function(feature) {
