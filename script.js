@@ -413,14 +413,6 @@ var geoJson = {
   ]
 };
 
-
-function displayLocation(position) {
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-
-  showMap(position.coords);
-}
-
 function showMap(coords) {
 	var googleLatLong = new google.maps.LatLng(coords.latitude, coords.longitude);
 	var mapOptions = {
@@ -502,6 +494,13 @@ map = new google.maps.Map(mapDiv, mapOptions);
 //=================================
 }
 //================================================
+function displayLocation(position) {
+	var latitude = position.coords.latitude;
+	var longitude = position.coords.longitude;
+
+  showMap(position.coords);
+}
+
 window.onload = function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation, displayError);
